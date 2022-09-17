@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>QRLpay demo</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <!-- <script src="{{ url_for('static', filename='server_connection.js') }}"></script> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Pay with QRL">
+    <meta name="description" content="Lightweight QRL payment processor written in easily deployable Python. ">
+
+
+</head>
+
+
+<body>
+    <div id="paybox">
+        <div id="row" height="50px">
+            <div id="left" style="display:inline;width:80%" height="75px">
+                <h1><span style="color:gray">Pay with</span> QRL</h1>
+            </div>
+            <div id="right" style="width:20%">
+                <a class="logo" target="_blank"><img width="65px" src="{{ url_for('static', filename='qrl-logo.png') }}"></a>
+            </div>
+        </div>
+
+        <div id="paymentForm">
+            <form id="pay" action='/pay' style="margin:0;padding0;">
+                <br>
+                <div class="embossbox">
+                    <span style="display:inline;vertical-align:middle;"><h2 style="margin:0;color:#ffa729;">Amount &nbsp </h2>
+                    <br>
+                    <input id="amountenter" size="3" style="text-align:right;float:right;margin-right:5px;background-color:black;color:white" type="float" name="amount" id="amount" placeholder="USD" required></span>
+                    <br>
+
+                </div>
+                <br>
+                <input class="button button1" style="width:30%;float:right; margin-right:0px" type="submit" value="Pay">
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

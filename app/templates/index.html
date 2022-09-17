@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>QRLpay demo</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='qrlpay.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Initate the payment websocket -->
+    <script type="text/javascript">
+        payment_data = {{ params|tojson }};
+        console.log(payment_data);
+        payment(payment_data);
+    </script>
+
+</head>
+
+
+<body>
+    <div id="paybox">
+        <div id="row" height="50px">
+            <div id="left" style="display:inline;width:80%" height="75px">
+                <h1><span style="color:gray">Pay with</span> QRL</h1>
+                <span style="color:white" id="waiting">Generating payment address...</span>
+            </div>
+            
+            <div id="right" style="width:20%">
+                <a id="qrClick" target="_blank"><img class="logo" id="qrImage" width="65px" src="{{ url_for('static', filename='qrl-logo.gif') }}"></a>
+            </div>
+        </div>
+
+        <div id="paymentDetails" style="display:block; padding: 0;">
+            <p style="padding:0;color:#ffa729;">Send: <b><span id="amount"></span></b> QRL</p>
+            <p style="padding:0;color:#ffa729;">To: </p><b><p id="address" onclick="copyTextFromElement('address')"></p></b>
+            <p style="padding:0;"><span id="status"></span></p>
+            <p id="timerContainer" style="padding:0;visibility:hidden;"><span id="timer"></span> seconds remaining.</p>
+        </div>
+
+        </br>
+
+        <div id="row">
+            <div id="left" style="text-align: left; padding: 0;">
+                <!-- <button class="button button1" onclick="replaceUrlParam(window.location, 'method', 'bitcoind');">Onchain Payment</button> -->
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

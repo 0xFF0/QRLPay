@@ -1,0 +1,171 @@
+html, body {
+    display: flex;
+    background-color: black;
+
+}
+body{
+    background-color: inherit;
+    overflow: hidden;
+        font-family: 'Inter custom', sans-serif;
+}
+
+#paybox {
+    /* background-image: url('logo.png');
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center; */
+
+    background-color: rgb(33, 36, 41);
+
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 16px
+
+    /* height:auto; */
+    height: 275px;
+    /* width:220px; */
+    width:360px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.embossbox {
+    background-color:black;
+    border-radius:10px;
+    padding:5px;
+    width:90%;
+    padding-left:10px;
+    margin-left:10px;
+    padding-bottom:15px;
+    border-width:2px;
+    border-color:gray;
+    border-style:solid;>
+}
+
+h1 {
+    color: #ffa729;
+    display:inline;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    display:inline;
+}
+p, form#p {
+    color: rgb(255, 255, 255);
+}
+
+#address {
+    color: white
+}
+
+/* Smartphones */
+@media only screen and (min-width : 0px) and (max-width : 700px){
+    #paybox {
+        width: 80%;
+        height: auto;
+    }
+}
+/* Desktop */
+@media only screen and (min-width: 700px){
+    #paybox {
+        width: 360px;
+        height: auto;
+    }
+}
+
+
+p {
+    /* display: inline-block; */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 5px;
+}
+h1 {
+    font-size: 2em;
+    border-bottom: 2px solid gray;
+}
+
+.button {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-family: "Lucida Console", "Courier New", monospace;
+  border-radius: 12px;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.logo {
+    padding-top:0px;
+    padding-left:20px;
+    float:right;
+}
+
+.qr {
+    transition: transform .2s;
+    object-fit: cover;
+}
+.qr:hover {
+    -ms-transform: scale(2.5); /* IE 9 */
+    -webkit-transform: scale(2.5); /* Safari 3-8 */
+    transform: scale(3);
+}
+
+
+input:placeholder-shown {
+    border: 2px solid #ffa729;
+}
+
+#amountenter {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-radius:5px;
+}
+
+#qrImage {
+    float: right;
+    /* margin: auto; */
+    padding-right:15px;
+    padding-top:25px;
+}
+
+#row {
+    display: flex;
+}
+ #left {
+  width: 50%;
+  padding: 0 0 0 0;
+  float: left;
+}
+#right {
+  width: 50%;
+  padding: 0 0 0 0;
+  float: right;
+}
+#address {
+    overflow-wrap: break-word;
+    text-align: right;
+}
+#about {
+    color: white;
+}
