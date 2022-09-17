@@ -12,7 +12,7 @@ This project is a PoC developped during the [QRL Hackathon 2022](https://www.the
 
 Donation Demo      |  QRL Payment Gateway
 :-------------------------:|:-------------------------:
-[![Donate demo](img/Demo_donate.png)] <br /><br><br />  |  [![Donate demo](img/QRLPay.png)] <br />
+[![Donate demo](img/demo_donate.png)] <br /><br><br />  |  [![Donate demo](img/QRLPay.png)] <br />
 
 
 
