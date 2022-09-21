@@ -123,7 +123,7 @@ if [ ! -f /usr/local/bin/wp ]; then
 fi
 
 # Completing the installation
-sudo -u www-data wp core install --url=127.0.0.1 --title=$WORDPRESS_BLOG_TITLE --admin_user=$WORDPRESS_USER --admin_password=$WORDPRESS_PASS --admin_email=$WORDPRESS_ADMIN_EMAIL --path=/var/www/$DOMAIN_NAME
+sudo -u www-data wp core install --url=$DOMAIN_NAME --title=$WORDPRESS_BLOG_TITLE --admin_user=$WORDPRESS_USER --admin_password=$WORDPRESS_PASS --admin_email=$WORDPRESS_ADMIN_EMAIL --path=/var/www/$DOMAIN_NAME
 
 
 # Install woocommerce
@@ -144,9 +144,9 @@ sudo -u www-data wp option set --format=json woocommerce_cheque_settings '{"enab
 sudo -u www-data wp option set --format=json woocommerce_bacs_settings '{"enabled":"no"}' --path=/var/www/$DOMAIN_NAME
 sudo -u www-data wp option set --format=json woocommerce_cod_settings '{"enabled":"no"}' --path=/var/www/$DOMAIN_NAME
 sudo -u www-data wp theme install fastest-store --activate --path=/var/www/$DOMAIN_NAME
-sudo wget -O /var/www/localhost/wp-content/themes/fastest-store/image/custom-header.jpg https://raw.githubusercontent.com/theQRL/assets/master/Tree/transparent-bg.png
+sudo wget -O /var/www/$DOMAIN_NAME/wp-content/themes/fastest-store/image/custom-header.jpg https://raw.githubusercontent.com/theQRL/assets/master/Tree/transparent-bg.png
 sudo -u www-data wp media import https://raw.githubusercontent.com/theQRL/assets/master/logo/yellow.png --path=/var/www/$DOMAIN_NAME 
-sudo wget -O /var/www/localhost/wp-content/themes/fastest-store/image/qrl-logo.png https://raw.githubusercontent.com/theQRL/assets/master/logo/yellow.png
+sudo wget -O /var/www/$DOMAIN_NAME/wp-content/themes/fastest-store/image/qrl-logo.png https://raw.githubusercontent.com/theQRL/assets/master/logo/yellow.png
 
 if $BOOTSTRAP ; then
   #Products
@@ -192,7 +192,7 @@ if [ ! -z "$SHOP_PAGE_ID" ]; then
 fi
 
 # Delete hello world
-sudo -u www-data wp post delete 1 --path=/var/www/localhost 
+sudo -u www-data wp post delete 1 --path=/var/www/$DOMAIN_NAME 
 
 #Update Just another wordpress
 sudo -u www-data wp option update blogdescription "QRLPay eCommerce demo #hackathon2022" --path=/var/www/$DOMAIN_NAME
