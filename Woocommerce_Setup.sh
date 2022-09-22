@@ -78,9 +78,6 @@ sudo mysql -e "GRANT ALL ON wordpress.* TO '$MYSQL_WORDPRESS_USER'@'%'"
 sudo mysql -e "FLUSH PRIVILEGES"
 
 
-# enable mod_rewrite so that we can utilize the WordPress permalink feature
-# sudo a2enmod rewrite
-
 sudo a2ensite $DOMAIN_NAME
 #reload Apache
 sudo systemctl reload apache2
@@ -197,6 +194,5 @@ sudo -u www-data wp post delete 1 --path=/var/www/$DOMAIN_NAME
 #Update Just another wordpress
 sudo -u www-data wp option update blogdescription "QRLPay eCommerce demo #hackathon2022" --path=/var/www/$DOMAIN_NAME
 
-#sudo -u www-data wp plugin install ultimate-woocommerce-auction --path=/var/www/$DOMAIN_NAME --activate
 
 
