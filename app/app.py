@@ -227,7 +227,7 @@ class complete_payment(Resource):
                     response.status_code, response.text
                 )
                 print(err)
-                return {"message": err}, 500
+                return err, 500
 
             print("successfully confirmed payment via webhook.")
             return {"message": "Payment confirmed with store."}, 200
