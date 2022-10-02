@@ -145,7 +145,7 @@ sudo wget -O /var/www/$DOMAIN_NAME/wp-content/themes/fastest-store/image/custom-
 sudo -u www-data wp media import https://raw.githubusercontent.com/theQRL/assets/master/logo/yellow.png --path=/var/www/$DOMAIN_NAME 
 sudo wget -O /var/www/$DOMAIN_NAME/wp-content/themes/fastest-store/image/qrl-logo.png https://raw.githubusercontent.com/theQRL/assets/master/logo/yellow.png
 
-if $BOOTSTRAP ; then
+if $IMPORT_PRODUCTS ; then
   #Products
   sudo -u www-data wp wc product create --name=Product0 --description=Description --regular_price=0.1 --user=$WORDPRESS_USER --path=/var/www/$DOMAIN_NAME --images='[{"src":"https://raw.githubusercontent.com/theQRL/assets/master/logo/yellow.png"}]' 
   sudo -u www-data wp wc product create --name=Product1 --description=Description --regular_price=1 --user=$WORDPRESS_USER --path=/var/www/$DOMAIN_NAME --images='[{"src":"https://raw.githubusercontent.com/theQRL/assets/master/logo/black.png"}]' 
