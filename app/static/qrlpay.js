@@ -43,9 +43,14 @@ function check_payment(payment_uuid, checkinterval, payment_data) {
         if (payment_status.payment_complete == 1) {
             $('#status').text("Payment confirmed.").html();
             document.getElementById('timerContainer').style.visibility = "hidden";
-            complete_payment(payment_uuid, payment_data);
-            // clearInterval(checkinterval);
-            return 1;
+            success = complete_payment(payment_uuid, payment_data);
+             if(success) {
+			     return 1;
+			 }
+			 else {
+			     clearInterval(checkinterval);
+			     return 0;
+             }
         }
         else {
             if (payment_status.unconfirmed_paid > 0) {
@@ -70,8 +75,14 @@ function complete_payment(payment_uuid, payment_data) {
     $.get("/api/completepayment", {uuid: payment_uuid, id: order_id}).then(function(payment_completion) {
         console.log(payment_completion);
         $('#status').text(payment_completion.message).html();
+        setTimeout(() => {  window.location.replace(payment_data.redirect);  }, 5000);
+        return 1;
+    }, function(error) {
+	       console.log("failed");
+	       console.log(error);
+	       $('#status').text(error.responseJSON).html();
+	       return 0;
     });
-    setTimeout(() => {  window.location.replace(payment_data.redirect);  }, 5000);
 }
 
 function load_qr(payment_uuid) {
