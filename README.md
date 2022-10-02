@@ -2,8 +2,6 @@
 
 QRLPay is a simple, easily deployable, lightweight [QRL](https://www.theqrl.org/) payment processor that connects to your own QRL node.
 
-## [http://shopqrl.tk](http://shopqrl.tk)
-
 ### https://www.youtube.com/watch?v=hqpkXhJJxAA
 
 This project is a PoC developped during the [QRL Hackathon 2022](https://www.theqrl.org/events/qrl-hackathon-2022/).
@@ -14,9 +12,9 @@ This project is a PoC developped during the [QRL Hackathon 2022](https://www.the
 </p>
 
 
-Donation Demo      |  QRL Payment Gateway
+Donation      |  QRL Payment Gateway
 :-------------------------:|:-------------------------:
-<br>![Donate demo](img/demo_donate.png)(http://shopqrl.tk:4000/) <br /><br>(Click for embed demo)<br />  |  ![Donate demo](img/QRLPay.png)(http://shopqrl.tk:4000/) <br />(Click for embed demo)
+<br>![Donate](img/demo_donate.png)  |  ![Donate demo](img/QRLPay.png) 
 
 
 
