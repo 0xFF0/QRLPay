@@ -51,9 +51,10 @@ fi
 
 
 # Install packages
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install docker.io docker-compose python3.8-venv python3-pip python3-wheel curl -y
+sudo pip3 install qrcode flask-restx -y
 
 
 # Bootstrap
@@ -185,7 +186,7 @@ else
 
   export FLASK_DEBUG=1
   export FLASK_ENV=development
-  flask run
+  flask run --host=0.0.0.0
 fi
 
 
