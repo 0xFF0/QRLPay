@@ -55,7 +55,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 # Install necessary system packages
-sudo apt-get install docker.io docker-compose python3.10-venv python3-pip python3-wheel curl swig3.0 python3-dev build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake libleveldb-dev -y
+sudo apt-get install docker.io docker-compose python3.8-venv python3-pip python3-wheel curl swig3.0 python3-dev build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake libleveldb-dev -y
 
 # Create a Python virtual environment
 python3 -m venv .venv
