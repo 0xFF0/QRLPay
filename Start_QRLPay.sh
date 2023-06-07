@@ -50,11 +50,28 @@ fi
 
 
 
-# Install packages
+# Update and upgrade existing packages
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install docker.io docker-compose python3.8-venv python3-pip python3-wheel curl -y
-sudo pip3 install qrcode flask-restx -y
+
+# Install necessary system packages
+sudo apt-get install docker.io docker-compose python3.8-venv python3-pip python3-wheel curl swig3.0 python3-dev build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake libleveldb-dev -y
+
+# Create a Python virtual environment
+python3 -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate
+
+# Upgrade pip inside the virtual environment
+pip install --upgrade pip
+
+# Install Python packages inside the virtual environment
+pip install qrcode
+pip install flask-restx
+pip install config
+pip install payments
+
 
 
 # Bootstrap
