@@ -15,6 +15,39 @@ BASE=data/gunicorn
 NB_WORKERS=$((($(grep -c ^processor /proc/cpuinfo) * 2) + 1))
 WEB_PORT=5000
 
+# Bootstrap parameter
+if [[ $1 == --bootstrap ]]; then
+    BOOTSTRAP=true
+fi
+if [[ $2 == --bootstrap ]]; then
+    BOOTSTRAP=true
+fi
+if [[ $3 == --bootstrap ]]; then
+    BOOTSTRAP=true
+fi
+
+# Woocommerce parameter
+if [[ $1 == --woocommerce ]]; then
+    WOOCOMMERCE_SETUP=true
+fi
+if [[ $2 == --woocommerce ]]; then
+    WOOCOMMERCE_SETUP=true
+fi
+if [[ $3 == --woocommerce ]]; then
+    WOOCOMMERCE_SETUP=true
+fi
+
+# Production parameter
+if [[ $1 == --production ]]; then
+    PRODUCTION=true
+fi
+if [[ $2 == --production ]]; then
+    PRODUCTION=true
+fi
+if [[ $3 == --production ]]; then
+    PRODUCTION=true
+fi
+
 if $PRODUCTION ; then
   WEB_PORT=4000
 fi
@@ -26,29 +59,10 @@ if [ ! -d data ]; then
   mkdir -p data
 fi
 
-
 # Create qrlData folder
 if [ ! -d $BOOTSTRAP_DEST ]; then
   mkdir -p $BOOTSTRAP_DEST
 fi
-
-# Bootstrap parameter
-if [[ $1 == --bootstrap ]]; then
-    BOOTSTRAP=true
-fi
-if [[ $2 == --bootstrap ]]; then
-    BOOTSTRAP=true
-fi
-
-# Woocommerce parameter
-if [[ $1 == --woocommerce ]]; then
-    WOOCOMMERCE_SETUP=true
-fi
-if [[ $2 == --woocommerce ]]; then
-    WOOCOMMERCE_SETUP=true
-fi
-
-
 
 # Update and upgrade existing packages
 sudo apt-get update -y
