@@ -1,6 +1,6 @@
 #!/bin/bash
 NET_NAME=Mainnet    # Mainnet/Testnet
-PRODUCTION=false
+PRODUCTION=true
 BOOTSTRAP=false
 WOOCOMMERCE_SETUP=false
 
