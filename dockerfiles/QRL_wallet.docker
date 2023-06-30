@@ -6,8 +6,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install swig3.0 python3-dev python
 
 
 # Install go
-RUN wget "https://go.dev/dl/go1.17.7.linux-amd64.tar.gz"
-RUN tar -C /usr/local -xzf go1.17.7.linux-amd64.tar.gz
+RUN wget "https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
+RUN tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
 
 
 ENV PATH "$PATH:/usr/local/go/bin"
