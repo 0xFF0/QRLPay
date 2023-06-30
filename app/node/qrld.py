@@ -3,9 +3,9 @@ import uuid
 import qrcode
 import json
 
-import config
+from app import config
 #from node.qrl import Coingecko
-from node.qrl import wallet
+from app.node.qrl import wallet
 
 
 class qrlnode:
