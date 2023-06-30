@@ -74,6 +74,30 @@ QRLPay is a self-hosted QRL payment processor, serving two primary use cases:
   <img width="75%" height="75%" src="img/Diagram-QRLPay.png">
 </p>
 
+## Management
+
+### Containers management
+
+Docker containers can be managed using [Portainer](https://www.portainer.io/). After the setup, navigate to http://127.0.0.1:9000. To manage the containers, click on *Home*, *local* and then on *Containers*.
+
+Portainer can be useful for:
+
+- [Stop and restart containers](https://docs.portainer.io/user/docker/containers/view)
+- [View container's logs](https://docs.portainer.io/user/docker/containers/logs) 
+- [Access container's console](https://docs.portainer.io/user/docker/containers/console)
+
+
+
+### QRL Wallet management
+
+QRLPay use the [walletd-rest-proxy](https://github.com/theQRL/walletd-rest-proxy) to communicate with the wallet. 
+
+[QRL wallet API](https://docs.theqrl.org/developers/walletAPI/) can be used to manage the wallet 
+
+		$ curl -XGET http://127.0.0.1:5359/api/ListAddresses
+
+QRL wallet file is created in *qrlData/Mainnet/walletd.json*. Be careful to not reuse the same testnet wallet in production (i.e: to avoid reusing OTS keys).
+
 
 ## Credits
 
