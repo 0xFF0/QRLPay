@@ -18,11 +18,11 @@ import json
 import argparse
 
 
-import config
-from payments import database
-from node.qrl import coingecko
-from node import qrld
-from gateways import woo_webhook
+from app import config
+from app.payments import database
+from app.node.qrl import coingecko
+from app.node import qrld
+from app.gateways import woo_webhook
 
 app = Flask(__name__)
 
