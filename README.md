@@ -35,9 +35,10 @@ QRLPay is a self-hosted QRL payment processor, serving two primary use cases:
 
 2) Make the scripts executable.
 
+	    cd QRLPay
 	    chmod +x Start_QRLPay.sh Woocommerce_Setup.sh
 
-3) Edit config file (default value will install WooCommerce on your localhost)
+4) Edit config file (default value will install WooCommerce on your localhost)
 
 		$ gedit env
 		
@@ -56,7 +57,7 @@ QRLPay is a self-hosted QRL payment processor, serving two primary use cases:
 	| QRLPAY_URL | Payment processor URL|
 
 
-4) Run the script to setup and install everything.
+5) Run the script to setup and install everything.
 
 	    ./Start_QRLPay.sh --bootstrap --woocommerce	
 
